@@ -1,0 +1,133 @@
+import pycrfsuite
+import sys
+import nltk
+import string
+nltk.download('averaged_perceptron_tagger')
+
+def features(sentence, pos, index):
+	return {
+		#word features
+		'word': sentence[index],
+		'is_first_word': index == 0,
+		'is_last_word': index == len(sentence) - 1,
+
+		#ortho features
+		'is_capitalized': sentence[index][0].upper() == sentence[index][0],
+		'is_all_caps': sentence[index].upper() == sentence[index],
+		'is_all_lower': sentence[index].lower() == sentence[index],
+		'is_capitals_inside': sentence[index][1:].lower() != sentence[index][1:],
+		'is_number': sentence[index].isdigit(),
+
+		#pos features
+		'pos': pos[index][1],
+		'pos_prev_word': '' if index == 0 else pos[index - 1][1],
+		'pos_next_word': '' if index == len(sentence) - 1 else pos[index + 1][1],
+
+		#neighbouring words
+		'prev_word': '' if index == 0 else sentence[index - 1],
+		'next_word': '' if index == len(sentence) - 1 else sentence[index + 1],
+
+		#check for punctuation
+		'has_punctuation': sentence[index] == sentence[index].translate(string.punctuation),
+	}
+
+
+def splitter(_line):
+	_line = _line.replace("<format>","").replace("</format>","").replace("<others>","").replace("</others>","")
+	_line = _line.replace("<grading>","").replace("</grading>","").replace("<requisite>","").replace("</requisite>","")
+	_line = _line.replace("<description>","").replace("</description>","")
+	return _line.split()
+
+
+def labeler(_word):
+	if "<format>" in _word:
+		return "format"
+	elif "</format>" in _word:
+		return "format"
+	elif "<grading>" in _word:
+		return "grading"
+	elif "</grading>" in _word:
+		return "grading"
+	elif "</other>" in _word:
+		return "other"
+	elif "<other>" in _word:
+		return "other"
+	elif "<description>" in _word:
+		return "description"
+	elif "</description>" in _word:
+		return "description"
+	elif "<requisite>" in _word:
+		return "requisite"
+	elif "</requisite>" in _word:
+		return "requisite"
+	else:
+		return "-"
+
+def testModel(model, inputfile, outputfile):
+	tagger = pycrfsuite.Tagger()
+	tagger.open(model)
+	file = open(inputfile, "r+")
+	outputfile = open(outputfile, "w+")
+	for line in file:
+		pred = []
+		test = line.split()
+		pos = nltk.pos_tag(test)
+		t = test
+		feature_vector = [features(test, pos, i) for i in range(len(test))]
+		pred += tagger.tag(feature_vector)
+		i = 0
+		j = i+1
+		while i<len(pred)-1:
+			while j < len(pred) and pred[j] == pred[i]:
+				j+=1
+			t[i] = '<'+pred[i]+'>'+t[i]
+			t[j-1] = t[j-1]+'</'+pred[i]+'>'
+			i = j
+			j += 1
+
+		outputfile.write(' '.join(word for word in t)+"\n")
+	outputfile.close()
+
+
+
+def trainModel(modelName):
+	f = open("train-ucla.txt","r+")
+	f = f.readlines()
+	model = pycrfsuite.Trainer()
+
+	tagged = []
+	labels = []
+
+	for line in f:
+
+		line_X = splitter(line)
+		pos = nltk.pos_tag(line_X)
+		split_line = line.split()
+		semi_labels = []
+		prev = ""
+		for word in split_line:
+			label = labeler(word)
+			if label == '-':
+				semi_labels.append(prev)
+			else:
+				semi_labels.append(label)
+				prev = label
+		labels.append(semi_labels)
+		tagged.append([features(line_X, pos, i) for i in range(len(line_X))])
+
+	for i in range(len(tagged)):
+		model.append(tagged[i], labels[i])
+
+	model.train(modelName)
+
+
+model = sys.argv[1]
+inputfile = sys.argv[2]
+outputfile = sys.argv[3]
+
+if __name__ == "__main__":
+	try:
+		testModel(model, inputfile, outputfile)
+	except:
+		trainModel(model)
+		testModel(model, inputfile, outputfile)
