@@ -1,0 +1,9 @@
+owl:Nothing is a basically a class that is unsatifianle. This means that that it cannot have any instances becauses the set of its instances yields an empty set.
+
+CheesyVegetableTopping
+
+This class is defined as subclass of CheeseTopping AND VegetableTopping but since they both are disjoint classes, their intersection yields an empty set, hence the reasoner assigns it to owl:Nothing.
+
+IceCream
+
+This class is defined as subclass of Food AND 'hasTopping some FruitTopping'. FruitTopping comes under PizzaTopping which itself comes under Food. Since they both are disjoint classes, their intersection yields an empty set, hence the reasoner assigns it to owl:Nothing.

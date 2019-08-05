@@ -1,0 +1,479 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#"
+     xml:base="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#relational_properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor_type"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#difficulty_level -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#difficulty_level">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#relational_properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#provided_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#provided_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#relational_properties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#relational_properties -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#relational_properties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#requisite_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#requisite_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#relational_properties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#teaches"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#teaches">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#relational_properties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Advanced -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Advanced">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Assistant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Assistant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor_type"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Foundation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Associate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Associate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor_type"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Foundation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Code -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Code">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Description -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Description">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Grade_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Grade_type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Name -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Name">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Taught_by -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Taught_by">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_difficulty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_difficulty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#difficulty_level"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_requisites -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_requisites">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#requisite_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Courses_taugh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Courses_taugh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#teaches"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Duration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Duration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Provided_by_university -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Provided_by_university">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Foundation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Foundation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#From_university -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#From_university">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Full_time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Full_time">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor_type"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Advanced"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Foundation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Medium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Medium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Name -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Name">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor_type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#can_teach"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Research_interest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Research_interest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Degrees_provided -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Degrees_provided">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Established -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Established">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Name -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Name">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Domain_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#teaches_at -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#teaches_at">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Advanced"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Foundation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Medium"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_type"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor_type"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Professor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#University"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Code"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Description"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Grade_type"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Name"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Course_Taught_by"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Courses_taugh"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#From_university"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Name"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Research_interest"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Duration"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Provided_by_university"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Degree_Type"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Degrees_provided"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Established"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karanmaheshwari/ontologies/2019/3/project#Uni_Name"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
